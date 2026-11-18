@@ -1730,3 +1730,1104 @@ button {
     transform: none;
 }
 
+
+/* ==========================================
+   INTERESTS SECTION
+   EDITORIAL SCRAPBOOK DESIGN
+========================================== */
+
+.interests-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 120px 0 110px;
+    overflow: hidden;
+    isolation: isolate;
+    scroll-margin-top: 80px;
+
+    background:
+        radial-gradient(
+            ellipse at 8% 12%,
+            rgba(207, 126, 153, 0.16),
+            transparent 32%
+        ),
+        radial-gradient(
+            ellipse at 95% 60%,
+            rgba(126, 78, 105, 0.13),
+            transparent 35%
+        ),
+        #19141b;
+
+    color: #f8edf1;
+}
+
+/* Background decorative rings */
+
+.interests-section::before,
+.interests-section::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.interests-section::before {
+    width: 420px;
+    height: 420px;
+    top: 8%;
+    right: -230px;
+    border: 1px solid rgba(233, 139, 170, 0.14);
+
+    box-shadow:
+        0 0 0 35px rgba(233, 139, 170, 0.025),
+        0 0 0 75px rgba(233, 139, 170, 0.02);
+}
+
+.interests-section::after {
+    width: 300px;
+    height: 300px;
+    bottom: 4%;
+    left: -180px;
+    border: 1px solid rgba(233, 139, 170, 0.12);
+}
+
+
+/* ==========================================
+   INTERESTS CONTAINER
+========================================== */
+
+.interests-container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==========================================
+   INTRODUCTION
+========================================== */
+
+.interests-intro {
+    max-width: 750px;
+    margin: 0 auto 100px;
+    text-align: center;
+}
+
+.interests-eyebrow {
+    color: #d994ad;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-bottom: 22px;
+}
+
+.interests-heading {
+    color: #fff2f5;
+    font-size: clamp(3.5rem, 8vw, 6.2rem);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    margin-bottom: 25px;
+}
+
+.interests-heading span {
+    display: block;
+    color: #d994ad;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 500;
+}
+
+.interests-description {
+    max-width: 540px;
+    margin: 0 auto;
+    color: #c7b5be;
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+
+/* ==========================================
+   ASYMMETRIC SCRAPBOOK GRID
+========================================== */
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "music art"
+        "psychology yoga"
+        "service travel";
+
+    gap: 48px 38px;
+    align-items: start;
+}
+
+
+/* ==========================================
+   BASE INTEREST CARD
+========================================== */
+
+.interest-card {
+    --card-accent: #d994ad;
+
+    position: relative;
+    min-width: 0;
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: visible;
+    isolation: isolate;
+
+    background:
+        linear-gradient(
+            145deg,
+            #493442,
+            #30232f 65%,
+            #251d29
+        );
+
+    border: 1px solid rgba(217, 148, 173, 0.25);
+    border-radius: 4px 24px 5px 24px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+}
+
+/* Paper corner fold */
+
+.interest-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65px;
+    height: 65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 50%,
+            rgba(217, 148, 173, 0.13) 50%
+        );
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Small decorative tape */
+
+.interest-card::after {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 42%;
+    width: 75px;
+    height: 23px;
+
+    background: rgba(222, 169, 184, 0.65);
+    opacity: 0.75;
+
+    transform: rotate(-4deg);
+    z-index: 5;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+}
+
+.interest-card:hover {
+    border-color: rgba(233, 169, 190, 0.7);
+
+    box-shadow:
+        0 28px 60px rgba(0, 0, 0, 0.38),
+        0 0 30px rgba(217, 148, 173, 0.09);
+}
+
+
+/* ==========================================
+   DIFFERENT CARD COMPOSITIONS
+========================================== */
+
+/* Music — large feature card */
+
+.interest-music {
+    --card-accent: #e9a8c0;
+    grid-area: music;
+    min-height: 590px;
+    transform: rotate(-0.7deg);
+}
+
+.interest-music:hover {
+    transform: translateY(-7px) rotate(0deg);
+}
+
+/* Art — compact editorial card */
+
+.interest-art {
+    --card-accent: #e5b0c2;
+    grid-area: art;
+    min-height: 520px;
+    margin-top: 45px;
+    transform: rotate(0.8deg);
+}
+
+.interest-art:hover {
+    transform: translateY(-7px) rotate(0deg);
+}
+
+/* Psychology — wide, thoughtful composition */
+
+.interest-psychology {
+    --card-accent: #e8bdc9;
+    grid-area: psychology;
+    min-height: 550px;
+    transform: rotate(0.5deg);
+}
+
+.interest-psychology:hover {
+    transform: translateY(-7px) rotate(0deg);
+}
+
+/* Yoga — calm, lighter composition */
+
+.interest-yoga {
+    --card-accent: #cfa9b8;
+    grid-area: yoga;
+    min-height: 500px;
+    margin-top: 45px;
+    transform: rotate(-0.8deg);
+}
+
+.interest-yoga:hover {
+    transform: translateY(-7px) rotate(0deg);
+}
+
+/* Service — warm paper-inspired card */
+
+.interest-service {
+    --card-accent: #e0a5b5;
+    grid-area: service;
+    min-height: 510px;
+    margin-top: 10px;
+    transform: rotate(-0.5deg);
+}
+
+.interest-service:hover {
+    transform: translateY(-7px) rotate(0deg);
+}
+
+/* Travel — prominent final feature card */
+
+.interest-travel {
+    --card-accent: #e8b1ca;
+    grid-area: travel;
+    min-height: 570px;
+    margin-top: -15px;
+    transform: rotate(0.7deg);
+}
+
+.interest-travel:hover {
+    transform: translateY(-7px) rotate(0deg);
+}
+
+
+/* ==========================================
+   CARD HEADER
+========================================== */
+
+.interest-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.interest-number {
+    color: var(--card-accent);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.interest-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    border: 1px solid rgba(217, 148, 173, 0.4);
+    border-radius: 50%;
+
+    color: var(--card-accent);
+    background: rgba(217, 148, 173, 0.1);
+
+    font-size: 1.4rem;
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease;
+}
+
+.interest-card:hover .interest-symbol {
+    transform: rotate(15deg) scale(1.12);
+    background: rgba(217, 148, 173, 0.2);
+}
+
+
+/* ==========================================
+   CARD TEXT
+========================================== */
+
+.interest-title {
+    color: #fff0f4;
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.interest-description {
+    color: #d0bec7;
+    font-size: 0.87rem;
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+
+/* ==========================================
+   IMAGE COLLAGE BASE
+========================================== */
+
+.interest-collage {
+    position: relative;
+    width: 100%;
+
+    display: grid;
+    gap: 13px;
+
+    margin: 12px 0 25px;
+    padding: 15px;
+
+    background: rgba(15, 12, 17, 0.42);
+    border: 1px solid rgba(217, 148, 173, 0.15);
+    border-radius: 3px;
+
+    box-shadow:
+        inset 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Individual photographs */
+
+.interest-photo-slot {
+    position: relative;
+    min-width: 0;
+    min-height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #725266,
+            #493445
+        );
+
+    border: 7px solid #f2e4e8;
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* Placeholder text */
+
+.interest-photo-slot::before {
+    content: "ADD PHOTO";
+
+    position: absolute;
+    z-index: 2;
+
+    color: #f0c9d6;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    opacity: 0.85;
+}
+
+/* Placeholder decoration */
+
+.interest-photo-slot::after {
+    content: "✦";
+
+    position: absolute;
+    color: rgba(240, 201, 214, 0.35);
+    font-size: 2rem;
+    pointer-events: none;
+}
+
+/* Actual images */
+
+.interest-photo-slot img {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+
+    display: block;
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+/* Hide placeholder when image exists */
+
+.interest-photo-slot:has(img)::before,
+.interest-photo-slot:has(img)::after {
+    display: none;
+}
+
+/* Image hover */
+
+.interest-photo-slot:hover {
+    transform: translateY(-7px) rotate(0deg) scale(1.025);
+    z-index: 8;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 0 15px rgba(217, 148, 173, 0.15);
+}
+
+.interest-photo-slot:hover img {
+    transform: scale(1.08);
+    filter: saturate(1.08);
+}
+
+
+/* ==========================================
+   MUSIC COLLAGE
+========================================== */
+
+.music-collage {
+    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-rows: 145px 145px;
+    min-height: 325px;
+    transform: rotate(-0.5deg);
+}
+
+.music-photo-one {
+    grid-row: span 2;
+    transform: rotate(-2deg);
+}
+
+.music-photo-two {
+    transform: rotate(2deg);
+}
+
+.music-photo-three {
+    transform: rotate(-1deg);
+}
+
+
+/* ==========================================
+   ART COLLAGE
+========================================== */
+
+.art-collage {
+    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-rows: 115px 115px;
+    min-height: 270px;
+    transform: rotate(0.7deg);
+}
+
+.art-photo-one {
+    grid-row: span 2;
+    transform: rotate(2deg);
+}
+
+.art-photo-two {
+    transform: rotate(-2deg);
+}
+
+.art-photo-three {
+    transform: rotate(1deg);
+}
+
+
+/* ==========================================
+   YOGA COLLAGE
+========================================== */
+
+.yoga-collage {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 120px 120px;
+    min-height: 280px;
+}
+
+.yoga-photo-one {
+    grid-row: span 2;
+    transform: rotate(-2deg);
+}
+
+.yoga-photo-two {
+    transform: rotate(2deg);
+}
+
+.yoga-photo-three {
+    transform: rotate(-1deg);
+}
+
+
+/* ==========================================
+   PSYCHOLOGY COLLAGE
+========================================== */
+
+.psychology-collage {
+    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-rows: 125px 125px;
+    min-height: 290px;
+    transform: rotate(-0.5deg);
+}
+
+.psychology-photo-one {
+    grid-row: span 2;
+    transform: rotate(2deg);
+}
+
+.psychology-photo-two {
+    transform: rotate(-2deg);
+}
+
+.psychology-photo-three {
+    transform: rotate(1deg);
+}
+
+
+/* ==========================================
+   SERVICE COLLAGE
+========================================== */
+
+.service-collage {
+    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-rows: 120px 120px;
+    min-height: 280px;
+}
+
+.service-photo-one {
+    grid-row: span 2;
+    transform: rotate(-2deg);
+}
+
+.service-photo-two {
+    transform: rotate(2deg);
+}
+
+.service-photo-three {
+    transform: rotate(-1deg);
+}
+
+
+/* ==========================================
+   TRAVEL COLLAGE
+========================================== */
+
+.travel-collage {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 140px 140px;
+    min-height: 320px;
+    transform: rotate(0.5deg);
+}
+
+.travel-photo-one {
+    transform: rotate(-2deg);
+}
+
+.travel-photo-two {
+    transform: rotate(2deg);
+}
+
+.travel-photo-three {
+    transform: rotate(-1deg);
+}
+
+.travel-photo-dream {
+    border-color: #e9d7ec;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(91, 73, 119, 0.9),
+            rgba(31, 35, 67, 0.95)
+        );
+
+    transform: rotate(2deg);
+}
+
+.travel-photo-dream::before {
+    content: "DREAM DESTINATION";
+    color: #e7c9e7;
+}
+
+
+/* ==========================================
+   PHOTO CAPTIONS
+========================================== */
+
+.interest-caption {
+    display: block;
+
+    margin-top: auto;
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(217, 148, 173, 0.25);
+
+    color: var(--card-accent);
+
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   INSTAGRAM LINK
+========================================== */
+
+.interest-external-link {
+    display: inline-block;
+    align-self: flex-start;
+
+    margin-top: auto;
+    padding-top: 15px;
+
+    color: var(--card-accent);
+
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+
+    border-top: 1px solid rgba(217, 148, 173, 0.25);
+
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.3s ease,
+        transform 0.3s ease;
+}
+
+.interest-external-link:hover {
+    color: #fff0f4;
+    letter-spacing: 2px;
+    transform: translateX(4px);
+}
+
+.interest-external-link:focus-visible {
+    outline: 2px solid var(--card-accent);
+    outline-offset: 5px;
+}
+
+
+/* ==========================================
+   ENDING MESSAGE
+========================================== */
+
+.interests-ending {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 110px;
+    text-align: center;
+}
+
+.interests-ending-star {
+    color: #e5a2bb;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+
+    animation: interestsStarGlow 3s ease-in-out infinite;
+}
+
+.interests-ending p {
+    color: #d994ad;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    line-height: 1.8;
+}
+
+@keyframes interestsStarGlow {
+    0%, 100% {
+        opacity: 0.65;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+
+/* ==========================================
+   ENTRANCE ANIMATIONS
+========================================== */
+
+.interests-animate {
+    animation: interestsFadeUp 0.85s ease both;
+}
+
+.interests-intro {
+    animation-delay: 0.1s;
+}
+
+.interest-card:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+.interest-card:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.interest-card:nth-child(3) {
+    animation-delay: 0.35s;
+}
+
+.interest-card:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+.interest-card:nth-child(5) {
+    animation-delay: 0.55s;
+}
+
+.interest-card:nth-child(6) {
+    animation-delay: 0.65s;
+}
+
+.interests-ending {
+    animation: interestsFadeUp 0.85s ease both;
+    animation-delay: 0.75s;
+}
+
+@keyframes interestsFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   TABLET RESPONSIVENESS
+========================================== */
+
+@media (max-width: 900px) {
+
+    .interests-section {
+        padding: 90px 0;
+    }
+
+    .interests-grid {
+        gap: 35px 25px;
+    }
+
+    .interest-card {
+        padding: 24px;
+    }
+
+    .interest-music {
+        min-height: 550px;
+    }
+
+    .interest-art {
+        min-height: 490px;
+    }
+
+    .interest-psychology {
+        min-height: 520px;
+    }
+
+    .interest-yoga {
+        min-height: 470px;
+    }
+
+    .interest-service {
+        min-height: 490px;
+    }
+
+    .interest-travel {
+        min-height: 530px;
+    }
+
+    .music-collage {
+        grid-template-rows: 125px 125px;
+        min-height: 285px;
+    }
+
+    .art-collage,
+    .yoga-collage,
+    .psychology-collage,
+    .service-collage {
+        grid-template-rows: 100px 100px;
+        min-height: 240px;
+    }
+
+    .travel-collage {
+        grid-template-rows: 115px 115px;
+        min-height: 270px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 768px) {
+
+    .interests-section {
+        padding: 80px 0;
+    }
+
+    .interests-intro {
+        margin-bottom: 65px;
+    }
+
+    .interests-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "music"
+            "art"
+            "psychology"
+            "yoga"
+            "service"
+            "travel";
+
+        gap: 40px;
+
+        max-width: 560px;
+        margin: 0 auto;
+    }
+
+    .interest-card {
+        min-height: auto;
+        margin-top: 0;
+        padding: 28px;
+    }
+
+    .interest-music,
+    .interest-art,
+    .interest-psychology,
+    .interest-yoga,
+    .interest-service,
+    .interest-travel {
+        transform: rotate(0deg);
+    }
+
+    .interest-music:hover,
+    .interest-art:hover,
+    .interest-psychology:hover,
+    .interest-yoga:hover,
+    .interest-service:hover,
+    .interest-travel:hover {
+        transform: translateY(-5px);
+    }
+
+    .interest-title {
+        font-size: 1.9rem;
+    }
+
+    .interest-description {
+        font-size: 0.88rem;
+    }
+
+    .music-collage {
+        grid-template-rows: 150px 150px;
+        min-height: 330px;
+    }
+
+    .art-collage,
+    .yoga-collage,
+    .psychology-collage,
+    .service-collage {
+        grid-template-rows: 125px 125px;
+        min-height: 290px;
+    }
+
+    .travel-collage {
+        grid-template-rows: 145px 145px;
+        min-height: 330px;
+    }
+
+    .interests-ending {
+        margin-top: 75px;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 480px) {
+
+    .interests-section {
+        padding: 65px 0;
+    }
+
+    .interests-container {
+        width: 90%;
+    }
+
+    .interests-intro {
+        margin-bottom: 50px;
+    }
+
+    .interests-eyebrow {
+        font-size: 0.62rem;
+        letter-spacing: 2.5px;
+    }
+
+    .interests-heading {
+        font-size: 3rem;
+        letter-spacing: -2px;
+    }
+
+    .interests-description {
+        font-size: 0.85rem;
+        line-height: 1.8;
+    }
+
+    .interests-grid {
+        gap: 32px;
+    }
+
+    .interest-card {
+        padding: 21px;
+    }
+
+    .interest-card::after {
+        width: 60px;
+        height: 19px;
+        top: -10px;
+    }
+
+    .interest-card-header {
+        margin-bottom: 18px;
+    }
+
+    .interest-title {
+        font-size: 1.6rem;
+    }
+
+    .interest-description {
+        font-size: 0.83rem;
+        line-height: 1.8;
+    }
+
+    .interest-collage {
+        gap: 9px;
+        padding: 9px;
+        margin: 8px 0 20px;
+    }
+
+    .music-collage {
+        grid-template-rows: 115px 115px;
+        min-height: 260px;
+    }
+
+    .art-collage,
+    .yoga-collage,
+    .psychology-collage,
+    .service-collage {
+        grid-template-rows: 95px 95px;
+        min-height: 220px;
+    }
+
+    .travel-collage {
+        grid-template-rows: 110px 110px;
+        min-height: 250px;
+    }
+
+    .interest-photo-slot {
+        border-width: 4px;
+    }
+
+    .interest-photo-slot::before {
+        font-size: 0.48rem;
+        letter-spacing: 1px;
+    }
+
+    .interest-caption {
+        font-size: 0.55rem;
+        letter-spacing: 1.3px;
+    }
+
+    .interest-external-link {
+        font-size: 0.58rem;
+        letter-spacing: 1px;
+    }
+
+    .interests-ending {
+        margin-top: 60px;
+    }
+
+    .interests-ending p {
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+    }
+}
+
+
+/* ==========================================
+   ACCESSIBILITY - REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .interests-animate,
+    .interest-card,
+    .interest-photo-slot,
+    .interest-photo-slot img,
+    .interests-ending-star {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .interest-card {
+        transform: none !important;
+    }
+
+    .interests-animate {
+        opacity: 1;
+    }
+}
