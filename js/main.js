@@ -141,7 +141,7 @@ sectionLinks.forEach((link) => {
 
 const currentYear = new Date().getFullYear();
 
-console.log(`Portfolio loaded - ${currentYear}`);
+
 
 
 // ==========================================
