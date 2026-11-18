@@ -3169,3 +3169,1143 @@ button {
     }
 
 }
+
+
+/* =========================================================
+   HOBBIES & PASSIONS
+   DREAMY SCRAPBOOK / POLAROID WALL
+========================================================= */
+
+.hobbies-section {
+    --hobby-paper: #f0e5ed;
+    --hobby-ink: #49394d;
+    --hobby-mauve: #c3a8c1;
+    --hobby-lavender: #d5c7df;
+    --hobby-pink: #e7cbd8;
+    --hobby-muted: #a78fa8;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 120px 6% 100px;
+    background:
+        radial-gradient(
+            circle at 12% 20%,
+            rgba(176, 142, 177, 0.13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(220, 185, 204, 0.10),
+            transparent 28%
+        ),
+        var(--bg-primary);
+    color: #f5eaf2;
+}
+
+.hobbies-section::before,
+.hobbies-section::after {
+    content: "✳";
+    position: absolute;
+    z-index: -1;
+    color: rgba(204, 172, 201, 0.13);
+    pointer-events: none;
+}
+
+.hobbies-section::before {
+    top: 12%;
+    left: 3%;
+    font-size: 100px;
+    transform: rotate(-15deg);
+}
+
+.hobbies-section::after {
+    right: 4%;
+    bottom: 10%;
+    font-size: 130px;
+    transform: rotate(20deg);
+}
+
+.hobbies-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SCRAPBOOK INTRODUCTION
+========================================================= */
+
+.hobbies-intro {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto 95px;
+    text-align: center;
+}
+
+.hobbies-eyebrow {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 9px 18px;
+    border: 1px solid rgba(210, 179, 207, 0.3);
+    border-radius: 30px;
+    color: #d6b9d0;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.hobbies-heading {
+    color: #f4eaf1;
+    font-size: clamp(2.7rem, 6vw, 5.2rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.hobbies-heading span {
+    display: block;
+    margin-top: 12px;
+    color: #c7a9c3;
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -1px;
+}
+
+.hobbies-description {
+    max-width: 550px;
+    margin: 25px auto 0;
+    color: #c0b2c2;
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   SCRAPBOOK GALLERY
+========================================================= */
+
+.hobbies-gallery {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: 35px;
+    gap: 25px 20px;
+    align-items: stretch;
+}
+
+
+/* Individual scrapbook placements */
+
+.hobby-photography {
+    grid-column: 2 / span 5;
+    grid-row: span 7;
+    transform: rotate(-3deg);
+}
+
+.hobby-cooking {
+    grid-column: 8 / span 4;
+    grid-row: span 6;
+    transform: rotate(2.5deg);
+}
+
+.hobby-gaming {
+    grid-column: 1 / span 4;
+    grid-row: span 6;
+    transform: rotate(2deg);
+}
+
+.hobby-gardening {
+    grid-column: 5 / span 4;
+    grid-row: span 5;
+    transform: rotate(-2.5deg);
+}
+
+.hobby-sports {
+    grid-column: 9 / span 4;
+    grid-row: span 6;
+    transform: rotate(3deg);
+}
+
+.hobby-art {
+    grid-column: 2 / span 5;
+    grid-row: span 6;
+    transform: rotate(2.5deg);
+}
+
+.hobby-singing {
+    grid-column: 8 / span 4;
+    grid-row: span 6;
+    transform: rotate(-3deg);
+}
+
+.hobby-psychology {
+    grid-column: 1 / span 5;
+    grid-row: span 7;
+    transform: rotate(-2deg);
+}
+
+.hobby-travel {
+    grid-column: 7 / span 6;
+    grid-row: span 7;
+    transform: rotate(2deg);
+}
+
+
+/* =========================================================
+   POLAROID CARD BASE
+========================================================= */
+
+.hobby-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 10px 10px 52px;
+
+    overflow: visible;
+    isolation: isolate;
+
+    border: 0;
+    border-radius: 3px;
+    background: var(--hobby-paper);
+
+    cursor: pointer;
+    text-align: left;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.15),
+        0 14px 30px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+
+/* PHOTO AREA */
+
+.hobby-card img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    display: block;
+    width: calc(100% - 20px);
+    height: calc(100% - 62px);
+
+    object-fit: cover;
+    object-position: center;
+
+    filter: saturate(0.82) sepia(0.06);
+
+    transition:
+        filter 0.5s ease,
+        transform 0.6s ease;
+}
+
+
+/* Soft photo shading */
+
+.hobby-card::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 52px;
+
+    z-index: 1;
+
+    background: linear-gradient(
+        to top,
+        rgba(30, 20, 35, 0.62),
+        transparent 55%
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   WASHI TAPE DETAILS
+========================================================= */
+
+.hobby-card::before {
+    content: "";
+    position: absolute;
+    top: -13px;
+    left: 50%;
+
+    z-index: 5;
+
+    width: 76px;
+    height: 24px;
+
+    background: rgba(205, 173, 201, 0.72);
+    opacity: 0.88;
+
+    transform: translateX(-50%) rotate(-5deg);
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        97% 100%,
+        3% 100%
+    );
+
+    pointer-events: none;
+}
+
+.hobby-cooking::before,
+.hobby-art::before,
+.hobby-psychology::before {
+    background: rgba(224, 190, 207, 0.78);
+    transform: translateX(-50%) rotate(5deg);
+}
+
+.hobby-gardening::before,
+.hobby-travel::before {
+    background: rgba(185, 180, 214, 0.78);
+}
+
+
+/* =========================================================
+   POLAROID CAPTIONS
+========================================================= */
+
+.hobby-card-overlay {
+    position: absolute;
+    inset: auto 10px 10px;
+
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    min-height: 95px;
+    padding: 12px 14px;
+
+    color: var(--hobby-ink);
+    background: var(--hobby-paper);
+}
+
+.hobby-number {
+    position: absolute;
+    top: -8px;
+    right: 8px;
+
+    color: #9e819e;
+    font-family: Georgia, serif;
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+.hobby-card-title {
+    color: #55435b;
+    font-family: "Segoe Print", "Bradley Hand", Georgia, cursive;
+    font-size: clamp(1.05rem, 2vw, 1.45rem);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.hobby-card-hint {
+    margin-top: 5px;
+
+    color: #9c829b;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    opacity: 0;
+    transform: translateY(5px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   INDIVIDUAL PHOTO CHARACTER
+========================================================= */
+
+.hobby-photography img {
+    object-position: center 35%;
+}
+
+.hobby-travel img {
+    object-position: center;
+}
+
+.hobby-psychology img {
+    object-position: center 40%;
+}
+
+.hobby-singing img {
+    object-position: center;
+}
+
+
+/* =========================================================
+   HOVER: PICK UP THE PHOTO
+========================================================= */
+
+@media (hover: hover) {
+
+    .hobby-card:hover {
+        z-index: 10;
+
+        transform: rotate(0deg) scale(1.045) translateY(-7px);
+
+        box-shadow:
+            0 8px 15px rgba(0, 0, 0, 0.15),
+            0 25px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .hobby-card:hover img {
+        filter: saturate(1.08) sepia(0);
+    }
+
+    .hobby-card:hover .hobby-card-hint {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.hobby-card:focus-visible {
+    outline: 3px solid #d7b5d0;
+    outline-offset: 6px;
+}
+
+
+/* =========================================================
+   HOBBY LIGHTBOX
+========================================================= */
+
+.hobby-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(24, 16, 29, 0.82);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.hobby-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* PAPER DETAIL PANEL */
+
+.hobby-lightbox-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 570px;
+
+    padding: 65px 48px 55px;
+
+    border: 9px solid #f0e5ed;
+    border-bottom-width: 18px;
+    border-radius: 3px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(203, 174, 203, 0.22),
+            transparent 35%
+        ),
+        #f0e5ed;
+
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.45);
+
+    color: #49394d;
+
+    transform: rotate(-2deg) scale(0.9);
+
+    transition: transform 0.4s ease;
+}
+
+.hobby-lightbox.active .hobby-lightbox-content {
+    transform: rotate(0deg) scale(1);
+}
+
+
+/* Decorative tape on modal */
+
+.hobby-lightbox-content::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 50%;
+
+    width: 100px;
+    height: 28px;
+
+    background: rgba(197, 164, 192, 0.8);
+
+    transform: translateX(-50%) rotate(-3deg);
+}
+
+
+/* CLOSE BUTTON */
+
+.hobby-lightbox-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #dfcedd;
+    color: #55415a;
+
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.hobby-lightbox-close:hover {
+    transform: rotate(90deg);
+    background: #d1b8ce;
+}
+
+.hobby-lightbox-close:focus-visible {
+    outline: 2px solid #8c6d8d;
+    outline-offset: 3px;
+}
+
+
+/* MODAL TEXT */
+
+.hobby-modal-eyebrow {
+    margin-bottom: 16px;
+
+    color: #a184a2;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+#hobby-modal-title {
+    margin-bottom: 20px;
+
+    color: #55415a;
+    font-family: Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hobby-modal-description {
+    color: #76647a;
+    font-size: 0.96rem;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   SCRAPBOOK ENDING
+========================================================= */
+
+.hobbies-ending {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    margin-top: 100px;
+    padding: 35px 20px;
+
+    text-align: center;
+}
+
+.hobbies-ending-star {
+    color: #d0aed0;
+    font-size: 2rem;
+    animation: scrapbookTwinkle 3s ease-in-out infinite;
+}
+
+.hobbies-ending p {
+    color: #c7b3c8;
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+
+@keyframes scrapbookTwinkle {
+    0%, 100% {
+        opacity: 0.65;
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: rotate(15deg) scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hobbies-section {
+        padding: 100px 5%;
+    }
+
+    .hobbies-gallery {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-auto-rows: 32px;
+        gap: 22px 15px;
+    }
+
+    .hobby-photography {
+        grid-column: 1 / span 4;
+        grid-row: span 7;
+    }
+
+    .hobby-cooking {
+        grid-column: 4 / span 3;
+        grid-row: span 6;
+    }
+
+    .hobby-gaming {
+        grid-column: 1 / span 3;
+        grid-row: span 6;
+    }
+
+    .hobby-gardening {
+        grid-column: 4 / span 3;
+        grid-row: span 5;
+    }
+
+    .hobby-sports {
+        grid-column: 1 / span 3;
+        grid-row: span 6;
+    }
+
+    .hobby-art {
+        grid-column: 4 / span 3;
+        grid-row: span 6;
+    }
+
+    .hobby-singing {
+        grid-column: 1 / span 3;
+        grid-row: span 6;
+    }
+
+    .hobby-psychology {
+        grid-column: 4 / span 3;
+        grid-row: span 7;
+    }
+
+    .hobby-travel {
+        grid-column: 2 / span 4;
+        grid-row: span 7;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hobbies-section {
+        padding: 80px 7%;
+    }
+
+    .hobbies-intro {
+        margin-bottom: 65px;
+    }
+
+    .hobbies-heading {
+        font-size: clamp(2.5rem, 11vw, 3.8rem);
+    }
+
+    .hobbies-eyebrow {
+        font-size: 0.58rem;
+        letter-spacing: 2px;
+    }
+
+    .hobbies-description {
+        font-size: 0.88rem;
+    }
+
+    .hobbies-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 38px;
+        padding: 12px 10px;
+    }
+
+    .hobby-card {
+        width: 88%;
+        height: 340px;
+        min-height: 340px;
+        margin: 0 auto;
+        flex: none;
+    }
+
+    .hobby-card:nth-child(even) {
+        align-self: flex-end;
+    }
+
+    .hobby-card:nth-child(odd) {
+        align-self: flex-start;
+    }
+
+    .hobby-photography {
+        transform: rotate(-3deg);
+    }
+
+    .hobby-cooking {
+        transform: rotate(3deg);
+    }
+
+    .hobby-gaming {
+        transform: rotate(-2deg);
+    }
+
+    .hobby-gardening {
+        transform: rotate(3deg);
+    }
+
+    .hobby-sports {
+        transform: rotate(-3deg);
+    }
+
+    .hobby-art {
+        transform: rotate(2deg);
+    }
+
+    .hobby-singing {
+        transform: rotate(-2deg);
+    }
+
+    .hobby-psychology {
+        transform: rotate(3deg);
+    }
+
+    .hobby-travel {
+        transform: rotate(-2deg);
+    }
+
+    .hobby-card-title {
+        font-size: 1.35rem;
+    }
+
+    .hobby-card-hint {
+        opacity: 1;
+        transform: none;
+    }
+
+    .hobbies-ending {
+        margin-top: 65px;
+    }
+
+    .hobby-lightbox-content {
+        padding: 60px 25px 40px;
+        border-width: 7px;
+        border-bottom-width: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hobby-card,
+    .hobby-card img,
+    .hobby-card-hint,
+    .hobby-lightbox,
+    .hobby-lightbox-content,
+    .hobby-lightbox-close,
+    .hobbies-ending-star {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
+
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.site-footer {
+    position: relative;
+    overflow: hidden;
+    padding: 75px 7% 28px;
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(180, 137, 179, 0.10),
+            transparent 30%
+        ),
+        var(--bg-secondary, #211923);
+    border-top: 1px solid rgba(205, 174, 204, 0.14);
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    padding-bottom: 55px;
+}
+
+.footer-brand {
+    max-width: 530px;
+}
+
+.footer-small-heading {
+    margin-bottom: 16px;
+    color: #b99ab8;
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+
+.footer-brand h2 {
+    margin-bottom: 16px;
+    color: var(--text-primary, #f5edf4);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.footer-brand h2 span {
+    color: #c7a7c4;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.footer-description {
+    max-width: 440px;
+    color: var(--text-secondary, #b8aeb9);
+    font-size: 0.9rem;
+    line-height: 1.9;
+}
+
+
+/* SOCIAL LINKS */
+
+.footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 14px;
+}
+
+.footer-social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 90px;
+    height: 90px;
+
+    border: 1px solid rgba(205, 174, 204, 0.2);
+    border-radius: 18px;
+
+    background: rgba(205, 174, 204, 0.045);
+
+    color: #d6c3d5;
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.footer-social-link svg {
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.footer-social-link:nth-child(1) svg rect,
+.footer-social-link:nth-child(1) svg circle {
+    fill: currentColor;
+    stroke: none;
+}
+
+.footer-social-link:nth-child(1) svg path {
+    fill: currentColor;
+    stroke: none;
+}
+
+.footer-social-link:nth-child(2) svg {
+    fill: none;
+}
+
+.footer-social-link span {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+.footer-social-link:hover {
+    transform: translateY(-6px);
+    border-color: rgba(210, 177, 207, 0.6);
+    background: rgba(190, 153, 188, 0.13);
+    color: #ead5e8;
+}
+
+.footer-social-link:focus-visible {
+    outline: 2px solid #d5b5d2;
+    outline-offset: 4px;
+}
+
+
+/* FOOTER DIVIDER */
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(205, 174, 204, 0.3),
+        transparent
+    );
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 25px;
+}
+
+.footer-build-credit,
+.footer-copyright {
+    color: #a99aa9;
+    font-size: 0.72rem;
+    line-height: 1.8;
+}
+
+.footer-build-credit span {
+    margin: 0 7px;
+    color: #c4a2c1;
+}
+
+.footer-copyright {
+    text-align: right;
+}
+
+
+/* ==========================================
+   BACK TO TOP BUTTON
+========================================== */
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(213, 181, 210, 0.4);
+    border-radius: 50%;
+
+    background: rgba(48, 34, 51, 0.92);
+    color: #e3cbe1;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(12px);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.back-to-top:hover {
+    background: #6e5571;
+    transform: translateY(-5px);
+}
+
+.back-to-top:focus-visible {
+    outline: 2px solid #d5b5d2;
+    outline-offset: 4px;
+}
+
+
+/* ==========================================
+   FOOTER RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 768px) {
+
+    .site-footer {
+        padding: 65px 6% 25px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+        padding-bottom: 40px;
+    }
+
+    .footer-socials {
+        justify-content: flex-start;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .footer-copyright {
+        text-align: left;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .footer-socials {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .footer-social-link {
+        width: 75px;
+        height: 78px;
+        border-radius: 14px;
+    }
+
+    .footer-build-credit,
+    .footer-copyright {
+        font-size: 0.67rem;
+    }
+
+    .back-to-top {
+        right: 18px;
+        bottom: 18px;
+        width: 43px;
+        height: 43px;
+    }
+
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .footer-social-link,
+    .back-to-top {
+        transition: none !important;
+    }
+
+}
+

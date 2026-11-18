@@ -146,3 +146,53 @@ sectionLinks.forEach((link) => {
 const currentYear = new Date().getFullYear();
 
 console.log(`Portfolio loaded - ${currentYear}`);
+
+
+
+// ==========================================
+// FOOTER
+// ==========================================
+
+// Automatically update copyright year
+
+const currentYear = document.getElementById("current-year");
+
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
+
+// ==========================================
+// BACK TO TOP BUTTON
+// ==========================================
+
+const backToTopButton = document.getElementById("back-to-top");
+
+if (backToTopButton) {
+
+    // Show button after scrolling down
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add("visible");
+        } else {
+            backToTopButton.classList.remove("visible");
+        }
+
+    }, { passive: true });
+
+
+    // Smoothly return to the top
+
+    backToTopButton.addEventListener("click", () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+}
+
