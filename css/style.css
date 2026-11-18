@@ -54,7 +54,7 @@ button {
     top: 0;
     z-index: 1000;
     padding: 12px 0;
-    background: rgba(17, 16, 16, 0.95);
+    background: var(--header-background);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--border-color);
 }
@@ -334,9 +334,9 @@ button {
     left: 77%;
     top: 15%;
     z-index: 7;
-    background: #302328;
+    background: var(--bubble-dark);
     color: var(--text-primary);
-    border: 1px solid #694352;
+    border: 1px solid var(--bubble-border);
     animation-duration: 6.5s;
     animation-delay: -2s;
 }
@@ -348,7 +348,7 @@ button {
     width: 130px;
     max-width: 130px;
     z-index: 8;
-    background: #302328;
+    background: var(--bubble-dark);
     color: var(--text-primary);
     animation-duration: 5s;
     animation-delay: -1.5s;
@@ -375,7 +375,7 @@ button {
     width: 118px;
     max-width: 118px;
     z-index: 10;
-    background: #F1D9DE;
+    background: var(--bubble-light);
     color: var(--text-dark);
     animation-duration: 6s;
     animation-delay: -2.5s;
@@ -386,9 +386,9 @@ button {
     left: 82%;
     top: 77%;
     z-index: 11;
-    background: #302328;
+    background: var(--bubble-dark);
     color: var(--text-primary);
-    border: 1px solid #694352;
+    border: 1px solid var(--bubble-border);
     animation-duration: 5.8s;
     animation-delay: -1s;
 }
@@ -507,7 +507,7 @@ button {
     line-height: 0.78;
     letter-spacing: -7px;
 
-    color: #f5528b;
+    color: var(--about-title);
 
     margin-bottom: 45px;
 
@@ -531,7 +531,7 @@ button {
     line-height: 1.9;
     font-weight: 500;
 
-    color: #514849;
+    color: var(--about-text);
     text-align: justify;
 }
 
@@ -544,7 +544,7 @@ button {
 }
 
 .about-description p:hover {
-    color: #C94C4C;
+    color: var(--about-hover);
     transform: translateX(7px);
 }
 
@@ -553,7 +553,7 @@ button {
 }
 
 .about-last-line span {
-    color: #C94C4C;
+    color: var(--about-hover);
     font-family: var(--font-heading);
     font-style: italic;
 }
@@ -571,7 +571,7 @@ button {
     font-size: 0.65rem;
     font-weight: 800;
     letter-spacing: 2px;
-    color: #8A6269;
+    color: var(--about-muted);
 }
 
 
@@ -593,7 +593,7 @@ button {
 .about-image-label {
     align-self: flex-start;
 
-    color: #C94C4C;
+    color: var(--about-hover);
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 3px;
@@ -614,7 +614,7 @@ button {
 
     overflow: hidden;
 
-    background: #F0DDE0;
+    background: var(--about-image-background);
 }
 
 .about-image {
@@ -643,7 +643,7 @@ button {
     font-size: 0.95rem;
     font-style: italic;
 
-    color: #795E62;
+    color: var(--about-caption);
 }
 
 .about-decoration {
@@ -652,7 +652,7 @@ button {
     font-family: var(--font-heading);
     font-weight: 900;
 
-    color: #C94C4C;
+    color: var(--about-hover);
 
     pointer-events: none;
     user-select: none;
@@ -704,13 +704,13 @@ button {
 }
 
 .about-bottom span:hover {
-    color: #C94C4C;
+    color: var(--about-hover);
     transform: translateY(-4px);
 }
 
 .about-image-label:hover,
 .about-image-caption:hover {
-    color: #C94C4C;
+    color: var(--about-hover);
     transform: translateX(5px);
 }
 
@@ -4398,6 +4398,163 @@ button {
 
         bottom: 20px;
         right: 20px;
+    }
+
+}
+
+
+
+/* ==========================================
+   NAVBAR LINKS + THEME TOGGLE
+========================================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-pink);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-toggle,
+.nav-menu-toggle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover,
+.nav-menu-toggle:hover {
+    transform: scale(1.08);
+    background: var(--accent-pink);
+    color: var(--text-dark);
+}
+
+.nav-menu-toggle {
+    display: none;
+}
+
+
+/* ==========================================
+   LIGHT THEME
+========================================== */
+
+[data-theme="light"] {
+
+    --bg-primary: #F7F0E8;
+    --bg-secondary: #EFE5DF;
+    --bg-card: #E8DCD5;
+    --bg-ivory: #F7F0E8;
+
+    --text-primary: #171313;
+    --text-secondary: #665A57;
+    --text-dark: #171313;
+
+    --header-background: rgba(247, 240, 232, 0.95);
+
+    --bubble-dark: #E8DCD5;
+    --bubble-border: #D5A8B8;
+    --bubble-light: #F4C5D3;
+
+    --border-color: rgba(23, 19, 19, 0.15);
+
+    --gradient-background: linear-gradient(
+        135deg,
+        #F7F0E8,
+        #EFE0E5
+    );
+}
+
+
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        position: relative;
+    }
+
+    .nav-menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+
+        width: min(260px, 90vw);
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 12px;
+
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-medium);
+
+        box-shadow: var(--shadow-pink);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px;
+        border-radius: var(--radius-small);
+    }
+
+    .nav-links a:hover {
+        background: var(--bg-secondary);
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .navbar {
+        gap: 10px;
+    }
+
+    .header-actions {
+        gap: 8px;
+    }
+
+    .theme-toggle,
+    .nav-menu-toggle {
+        width: 38px;
+        height: 38px;
     }
 
 }

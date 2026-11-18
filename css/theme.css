@@ -18,9 +18,24 @@
     --text-dark: #171313;
 
     /* Accent Colours */
+    --accent-primary: #E98BAA;
     --accent-pink: #E98BAA;
     --accent-pink-dark: #D96C95;
     --accent-blush: #F4C5D3;
+
+    /* Header and Home */
+    --header-background: rgba(17, 16, 16, 0.95);
+    --bubble-dark: #302328;
+    --bubble-border: #694352;
+    --bubble-light: #F1D9DE;
+
+    /* About Section */
+    --about-title: #f5528b;
+    --about-text: #514849;
+    --about-hover: #C94C4C;
+    --about-muted: #8A6269;
+    --about-image-background: #F0DDE0;
+    --about-caption: #795E62;
 
     /* Gradients */
     --gradient-primary: linear-gradient(
