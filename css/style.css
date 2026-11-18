@@ -2831,3 +2831,341 @@ button {
         opacity: 1;
     }
 }
+
+
+/* ==========================================
+   FAMILY SECTION
+========================================== */
+
+.family-section {
+    position: relative;
+    padding: 120px 6%;
+    overflow: hidden;
+    background: var(--bg-primary);
+}
+
+.family-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* SECTION INTRODUCTION */
+
+.family-intro {
+    text-align: center;
+    margin-bottom: 75px;
+}
+
+.family-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    color: var(--accent-primary);
+    margin-bottom: 18px;
+}
+
+.family-heading {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.family-heading span {
+    display: block;
+    color: var(--accent-primary);
+}
+
+/* COLLAGE LAYOUT */
+
+.family-collage {
+    position: relative;
+    min-height: 780px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* INDIVIDUAL PHOTOS */
+
+.family-photo {
+    position: absolute;
+    width: 250px;
+    padding: 12px 12px 35px;
+    background: #f5eee3;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.family-photo-frame {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.family-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.family-photo figcaption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: cursive;
+    font-size: 0.85rem;
+    color: #554b40;
+    letter-spacing: 1px;
+}
+
+/* PHOTO POSITIONS */
+
+.family-photo-one {
+    width: 270px;
+    height: 330px;
+    top: 30px;
+    left: 8%;
+    transform: rotate(-9deg);
+    z-index: 2;
+}
+
+.family-photo-two {
+    width: 220px;
+    height: 270px;
+    top: 0;
+    left: 39%;
+    transform: rotate(7deg);
+    z-index: 3;
+}
+
+.family-photo-three {
+    width: 245px;
+    height: 300px;
+    top: 55px;
+    right: 5%;
+    transform: rotate(-6deg);
+    z-index: 1;
+}
+
+.family-photo-four {
+    width: 230px;
+    height: 280px;
+    top: 390px;
+    left: 15%;
+    transform: rotate(6deg);
+    z-index: 3;
+}
+
+.family-photo-five {
+    width: 265px;
+    height: 320px;
+    top: 370px;
+    left: 39%;
+    transform: rotate(-5deg);
+    z-index: 2;
+}
+
+.family-photo-six {
+    width: 220px;
+    height: 270px;
+    top: 410px;
+    right: 5%;
+    transform: rotate(8deg);
+    z-index: 1;
+}
+
+/* HOVER EFFECT */
+
+.family-photo:hover {
+    transform: rotate(0deg) scale(1.08);
+    z-index: 10;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+}
+
+.family-photo:hover img {
+    transform: scale(1.08);
+}
+
+/* DECORATIVE ELEMENTS */
+
+.family-decoration {
+    position: absolute;
+    pointer-events: none;
+    color: var(--accent-primary);
+}
+
+.family-decoration-one {
+    top: 100px;
+    right: 2%;
+    font-size: 2.5rem;
+}
+
+.family-decoration-two {
+    bottom: 80px;
+    left: 2%;
+    font-size: 3rem;
+}
+
+.family-decoration-three {
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+}
+
+
+/* ==========================================
+   FAMILY SECTION - TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+    .family-section {
+        padding: 90px 5%;
+    }
+
+    .family-collage {
+        min-height: 950px;
+    }
+
+    .family-photo-one {
+        left: 3%;
+    }
+
+    .family-photo-two {
+        left: 38%;
+    }
+
+    .family-photo-three {
+        right: 1%;
+    }
+
+    .family-photo-four {
+        left: 5%;
+        top: 470px;
+    }
+
+    .family-photo-five {
+        left: 36%;
+        top: 450px;
+    }
+
+    .family-photo-six {
+        right: 1%;
+        top: 500px;
+    }
+
+}
+
+
+/* ==========================================
+   FAMILY SECTION - MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .family-section {
+        padding: 75px 20px;
+    }
+
+    .family-intro {
+        margin-bottom: 45px;
+    }
+
+    .family-heading {
+        letter-spacing: -1px;
+    }
+
+    .family-collage {
+        min-height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 15px;
+        padding: 10px 5px 30px;
+    }
+
+    .family-photo {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: 100%;
+        height: 230px;
+        padding: 8px 8px 30px;
+    }
+
+    .family-photo-one {
+        transform: rotate(-5deg);
+    }
+
+    .family-photo-two {
+        transform: rotate(5deg);
+    }
+
+    .family-photo-three {
+        transform: rotate(4deg);
+    }
+
+    .family-photo-four {
+        transform: rotate(-4deg);
+    }
+
+    .family-photo-five {
+        transform: rotate(-5deg);
+    }
+
+    .family-photo-six {
+        transform: rotate(5deg);
+    }
+
+    .family-photo figcaption {
+        font-size: 0.7rem;
+        bottom: 8px;
+    }
+
+    .family-photo:hover {
+        transform: scale(1.03);
+    }
+
+    .family-decoration-one {
+        top: 10px;
+        right: 5px;
+    }
+
+    .family-decoration-two {
+        bottom: 0;
+        left: 0;
+    }
+
+    .family-decoration-three {
+        display: none;
+    }
+
+}
+
+
+/* ==========================================
+   FAMILY SECTION - SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+
+    .family-collage {
+        gap: 25px 12px;
+    }
+
+    .family-photo {
+        height: 195px;
+        padding: 6px 6px 27px;
+    }
+
+    .family-photo figcaption {
+        font-size: 0.62rem;
+    }
+
+}
