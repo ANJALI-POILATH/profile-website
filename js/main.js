@@ -186,3 +186,90 @@ if (backToTopButton) {
     });
 
 }
+
+
+// ==========================================
+// 8. LIGHT / DARK THEME TOGGLE
+// ==========================================
+
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
+
+const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
+
+document.documentElement.setAttribute("data-theme", savedTheme);
+
+if (themeIcon) {
+    themeIcon.textContent = savedTheme === "dark" ? "☀" : "☾";
+}
+
+if (themeToggle) {
+
+    themeToggle.setAttribute(
+        "aria-label",
+        savedTheme === "dark"
+            ? "Switch to light theme"
+            : "Switch to dark theme"
+    );
+
+    themeToggle.addEventListener("click", () => {
+
+        const currentTheme =
+            document.documentElement.getAttribute("data-theme") || "dark";
+
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+        document.documentElement.setAttribute("data-theme", newTheme);
+
+        localStorage.setItem("portfolio-theme", newTheme);
+
+        if (themeIcon) {
+            themeIcon.textContent = newTheme === "dark" ? "☀" : "☾";
+        }
+
+        themeToggle.setAttribute(
+            "aria-label",
+            newTheme === "dark"
+                ? "Switch to light theme"
+                : "Switch to dark theme"
+        );
+
+    });
+
+}
+
+
+// ==========================================
+// 9. MOBILE NAVIGATION
+// ==========================================
+
+const navMenuToggle = document.getElementById("nav-menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+if (navMenuToggle && navLinks) {
+
+    navMenuToggle.addEventListener("click", () => {
+
+        const isOpen = navLinks.classList.toggle("active");
+
+        navMenuToggle.setAttribute("aria-expanded", isOpen);
+
+        navMenuToggle.textContent = isOpen ? "✕" : "☰";
+
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+            navMenuToggle.setAttribute("aria-expanded", "false");
+
+            navMenuToggle.textContent = "☰";
+
+        });
+
+    });
+
+}
