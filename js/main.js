@@ -117,9 +117,6 @@ sectionLinks.forEach((link) => {
 
         const targetSection = document.querySelector(targetId);
 
-        // Do not intercept links to sections
-        // that have not been created yet.
-
         if (!targetSection) {
             return;
         }
@@ -131,7 +128,6 @@ sectionLinks.forEach((link) => {
             block: "start"
         });
 
-        // Update the browser URL.
         history.pushState(null, "", targetId);
 
     });
@@ -148,29 +144,26 @@ const currentYear = new Date().getFullYear();
 console.log(`Portfolio loaded - ${currentYear}`);
 
 
-
 // ==========================================
-// FOOTER
+// 6. FOOTER
 // ==========================================
 
 // Automatically update copyright year
 
-const currentYear = document.getElementById("current-year");
+const copyrightYear = document.getElementById("current-year");
 
-if (currentYear) {
-    currentYear.textContent = new Date().getFullYear();
+if (copyrightYear) {
+    copyrightYear.textContent = currentYear;
 }
 
 
 // ==========================================
-// BACK TO TOP BUTTON
+// 7. BACK TO TOP BUTTON
 // ==========================================
 
 const backToTopButton = document.getElementById("back-to-top");
 
 if (backToTopButton) {
-
-    // Show button after scrolling down
 
     window.addEventListener("scroll", () => {
 
@@ -183,8 +176,6 @@ if (backToTopButton) {
     }, { passive: true });
 
 
-    // Smoothly return to the top
-
     backToTopButton.addEventListener("click", () => {
 
         window.scrollTo({
@@ -195,4 +186,3 @@ if (backToTopButton) {
     });
 
 }
-
